@@ -1,0 +1,15 @@
+###etsing 
+post http://localhost:8000/api/v1/users
+Content-Type: application/json
+
+{
+    "name":"tokey",
+    "email":"a@a11.com",
+    "password":"123"
+}
+
+###etsing 
+get http://localhost:8000/api/v1/users/all
+
+
+

@@ -38,6 +38,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set up Prisma
+        run: |
+          npx prisma migrate deploy
+          npx prisma db seed # If you have a seed script to populate the database
+        env:
+          DATABASE_URL: 'mysql://root:password@127.0.0.1:3306/tdd'
+
       - name: Run tests
         env:
           DATABASE_URL: 'mysql://root:password@127.0.0.1:3306/tdd'

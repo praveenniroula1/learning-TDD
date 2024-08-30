@@ -141,7 +141,7 @@ describe("User routes", () => {
       expect(response.body.status).toBe(true);
       expect(response.body.message).toBe("successfully deleted user");
 
-      const deletedUser = await prisma.user.findUnique({
+      const deletedUser = await prisma.user.find({
         where: { id: userToDelete.id },
       });
 

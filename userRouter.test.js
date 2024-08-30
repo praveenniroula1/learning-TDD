@@ -123,14 +123,29 @@ describe("User routes", () => {
     });
   });
 
-  describe("Delete /api/v1/users", () => {
-    it("should delete the user based on id it get via query", async () => {
+  describe("DELETE /api/v1/users", () => {
+    it("should delete the user based on id received via query", async () => {
+      const userToDelete = await prisma.user.create({
+        data: {
+          name: "UserToDelete",
+          email: "delete@example.com",
+          password: "deletePassword",
+        },
+      });
+
       const response = await request(app)
         .delete("/api/v1/users")
-        .query({ id: parseInt("1") });
+        .query({ id: userToDelete.id });
+
       expect(response.statusCode).toBe(200);
       expect(response.body.status).toBe(true);
       expect(response.body.message).toBe("successfully deleted user");
+
+      const deletedUser = await prisma.user.findUnique({
+        where: { id: userToDelete.id },
+      });
+
+      expect(deletedUser).toBeNull();
     });
   });
 });

@@ -1,5 +1,5 @@
 // __tests__/userRouter.test.js
-
+import "dotenv/config"
 import request from "supertest";
 import express from "express";
 import { PrismaClient } from "@prisma/client";

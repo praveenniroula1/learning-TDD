@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1724998466775" clover="3.2.0">
-  <project timestamp="1724998466775" name="All files">
+<coverage generated="1724999141630" clover="3.2.0">
+  <project timestamp="1724999141630" name="All files">
     <metrics statements="101" coveredstatements="90" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0" elements="111" coveredelements="95" complexity="0" loc="101" ncloc="101" packages="1" files="1" classes="1"/>
     <file name="userRouter.js" path="C:\Users\prave\Desktop\Backend Engineer\api\components\routers\userRouter.js">
       <metrics statements="101" coveredstatements="90" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0"/>

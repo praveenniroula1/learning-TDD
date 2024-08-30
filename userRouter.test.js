@@ -90,32 +90,47 @@ describe("User routes", () => {
           password: "oldPassword",
         },
       });
-  
-      const response = await request(app)
-        .patch("/api/v1/users")
-        .send({
-          email: "update@example.com",
-          newPassword: "newPassword",
-        });
-  
+
+      const response = await request(app).patch("/api/v1/users").send({
+        email: "update@example.com",
+        newPassword: "newPassword",
+      });
+
       expect(response.statusCode).toBe(200);
       expect(response.body.status).toBe(true);
       expect(response.body.message).toBe("successfully updated user"); // Adjusted message
       expect(response.body.updatedUser).toBeDefined();
-      expect(response.body.updatedUser).toHaveProperty("email", "update@example.com");
-      expect(response.body.updatedUser).toHaveProperty("password", "newPassword");
-  
+      expect(response.body.updatedUser).toHaveProperty(
+        "email",
+        "update@example.com"
+      );
+      expect(response.body.updatedUser).toHaveProperty(
+        "password",
+        "newPassword"
+      );
+
       // Verify the password was updated in the database
       const updatedUser = await prisma.user.findUnique({
         where: { email: "update@example.com" },
       });
-  
+
       expect(updatedUser.password).toBe("newPassword");
-  
+
       // Clean up the test user
       await prisma.user.delete({
         where: { email: "update@example.com" },
       });
+    });
+  });
+
+  describe("Delete /api/v1/users", () => {
+    it("should delete the user based on id it get via query", async () => {
+      const response = await request(app)
+        .delete("/api/v1/users")
+        .query({ id: parseInt("1") });
+      expect(response.statusCode).toBe(200);
+      expect(response.body.status).toBe(true);
+      expect(response.body.message).toBe("successfully deleted user");
     });
   });
 });

@@ -1,46 +1,31 @@
-name: Node.js CI
+name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      mysql:
-        image: mysql:5.7
-        ports:
-          - 3306:3306
-        env:
-          MYSQL_ROOT_PASSWORD: ""  
-          MYSQL_DATABASE: tdd
-        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=3
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Wait for MySQL to be ready
-        run: |
-          until mysql -h 127.0.0.1 -u root -e "SELECT 1"; do
-            echo "Waiting for MySQL..."
-            sleep 5
-          done
-
-      - name: Run Prisma Migrate
-        run: npx prisma migrate deploy
-
       - name: Run tests
         run: npm test
+
+      - name: Build application
+        run: npm run build

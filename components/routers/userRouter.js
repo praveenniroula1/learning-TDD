@@ -74,19 +74,17 @@ userRouter.delete("/", async (req, res) => {
   try {
     const { id } = req.query;
     const deleteUser = await prisma.user.delete({
-      where: {
-        id: parseInt(id),
-      },
+      where: { id: parseInt(id, 10) },
     });
     return res.json({
       status: true,
       message: "successfully deleted user",
     });
   } catch (error) {
-    console.log(error);
+    console.error("Error deleting user:", error);
+    res.status(500).json({ status: false, message: "Failed to delete user" });
   }
 });
-
 userRouter.get("/all", async (req, res) => {
   try {
     const findAlluser = await prisma.user.findMany();

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1724992973231" clover="3.2.0">
-  <project timestamp="1724992973232" name="All files">
-    <metrics statements="103" coveredstatements="93" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0" elements="113" coveredelements="98" complexity="0" loc="103" ncloc="103" packages="1" files="1" classes="1"/>
+<coverage generated="1724998466775" clover="3.2.0">
+  <project timestamp="1724998466775" name="All files">
+    <metrics statements="101" coveredstatements="90" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0" elements="111" coveredelements="95" complexity="0" loc="101" ncloc="101" packages="1" files="1" classes="1"/>
     <file name="userRouter.js" path="C:\Users\prave\Desktop\Backend Engineer\api\components\routers\userRouter.js">
-      <metrics statements="103" coveredstatements="93" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0"/>
+      <metrics statements="101" coveredstatements="90" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -86,27 +86,25 @@
       <line num="80" count="1" type="stmt"/>
       <line num="81" count="1" type="stmt"/>
       <line num="82" count="1" type="stmt"/>
-      <line num="83" count="1" type="stmt"/>
-      <line num="84" count="1" type="stmt"/>
-      <line num="85" count="1" type="cond" truecount="0" falsecount="1"/>
+      <line num="83" count="1" type="cond" truecount="0" falsecount="1"/>
+      <line num="84" count="0" type="stmt"/>
+      <line num="85" count="0" type="stmt"/>
       <line num="86" count="0" type="stmt"/>
-      <line num="87" count="0" type="stmt"/>
-      <line num="88" count="1" type="stmt"/>
+      <line num="87" count="1" type="stmt"/>
+      <line num="88" count="1" type="cond" truecount="1" falsecount="0"/>
       <line num="89" count="1" type="stmt"/>
-      <line num="90" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="90" count="1" type="stmt"/>
       <line num="91" count="1" type="stmt"/>
       <line num="92" count="1" type="stmt"/>
       <line num="93" count="1" type="stmt"/>
       <line num="94" count="1" type="stmt"/>
       <line num="95" count="1" type="stmt"/>
-      <line num="96" count="1" type="stmt"/>
-      <line num="97" count="1" type="stmt"/>
-      <line num="98" count="1" type="cond" truecount="0" falsecount="1"/>
-      <line num="99" count="0" type="stmt"/>
-      <line num="100" count="0" type="stmt"/>
+      <line num="96" count="1" type="cond" truecount="0" falsecount="1"/>
+      <line num="97" count="0" type="stmt"/>
+      <line num="98" count="0" type="stmt"/>
+      <line num="99" count="1" type="stmt"/>
+      <line num="100" count="1" type="stmt"/>
       <line num="101" count="1" type="stmt"/>
-      <line num="102" count="1" type="stmt"/>
-      <line num="103" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

@@ -132,19 +132,19 @@ describe("User routes", () => {
           password: "deletePassword",
         },
       });
-
+  
       const response = await request(app)
         .delete("/api/v1/users")
         .query({ id: userToDelete.id });
-
+  
       expect(response.statusCode).toBe(200);
       expect(response.body.status).toBe(true);
       expect(response.body.message).toBe("successfully deleted user");
-
-      const deletedUser = await prisma.user.find({
+  
+      const deletedUser = await prisma.user.findUnique({
         where: { id: userToDelete.id },
       });
-
+  
       expect(deletedUser).toBeNull();
     });
   });

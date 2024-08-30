@@ -25,4 +25,6 @@ jobs:
         run: npm install
 
       - name: Run tests
+        env:
+          DATABASE_URL: 'mysql://root:password@localhost:3306/tdd'
         run: npm test
